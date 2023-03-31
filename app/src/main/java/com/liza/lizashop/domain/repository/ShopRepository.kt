@@ -9,6 +9,6 @@ interface ShopRepository {
 
     fun getProductsList(category: String): List<ProductListItem>
 
-    fun getSaleTitleListUseCase(): List<ProductListItem>
+    fun getSaleTitleList(): List<ProductListItem>
 
 }
