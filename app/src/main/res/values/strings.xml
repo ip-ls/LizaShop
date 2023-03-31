@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">LizaShop</string>
+
+
+    <string name="my_account">Мой Аккаунт</string>
+    <string name="point_of_issue">Пункт выдачи</string>
+    <string name="top_up_balance">Пополнить баланс</string>
+    <string name="orders">Заказы</string>
+
+    <string name="notification">Уведомления</string>
+    <string name="push_notification">Пуш-уведомления</string>
+    <string name="promotions_and_offers">Акции и предложения</string>
+
+    <string name="account">Аккаунт</string>
+    <string name="support">Поддержка</string>
+    <string name="logout">Выход</string>
+
 </resources>

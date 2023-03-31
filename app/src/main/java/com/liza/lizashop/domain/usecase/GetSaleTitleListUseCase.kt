@@ -8,6 +8,6 @@ class GetSaleTitleListUseCase(
 ) {
 
     operator fun invoke(): List<ProductListItem> {
-        return repository.getSaleTitleListUseCase()
+        return repository.getSaleTitleList()
     }
 }
