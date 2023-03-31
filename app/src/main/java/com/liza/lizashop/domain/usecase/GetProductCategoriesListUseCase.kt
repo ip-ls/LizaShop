@@ -1,0 +1,13 @@
+package com.liza.lizashop.domain.usecase
+
+import com.liza.lizashop.domain.entity.ProductCategoryListItem
+import com.liza.lizashop.domain.repository.ShopRepository
+
+class GetProductCategoriesListUseCase(
+    private val repository: ShopRepository
+) {
+
+    operator fun invoke(): List<ProductCategoryListItem> {
+        return repository.getProductCategoriesList()
+    }
+}
