@@ -1,7 +1,8 @@
-package com.liza.lizashop
+package com.liza.lizashop.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.liza.lizashop.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,8 +1,11 @@
 package com.liza.lizashop.data.datasource
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.liza.lizashop.R
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
 import com.liza.lizashop.domain.entity.ProductListItem
+import com.liza.lizashop.domain.entity.SaleTitleListItem
 
 class ShopRemoteDataSource {
     private val productTechList = listOf<ProductListItem>(
@@ -77,18 +80,32 @@ class ShopRemoteDataSource {
         ProductCategoryListItem(R.drawable.icon_category_phone, "Техника"),
     )
 
-    fun getProductList(category: String): List<ProductListItem> {
-        if (category == CATEGORY_TECH)
-            return productTechList
+    private val categoryTitlesList = listOf<SaleTitleListItem>(
+        SaleTitleListItem(R.drawable.sale_category_furniture, "Мебель для дома"),
+        SaleTitleListItem(R.drawable.sale_category_tech, "Техника"),
+        SaleTitleListItem(R.drawable.sale_category_man_cloth, "Мужская одежда"),
+        SaleTitleListItem(R.drawable.sale_category_kids, "Дети"),
+    )
+
+    fun getProductList(category: String): LiveData<List<ProductListItem>> {
+        if (category == CATEGORY_TECH) {
+            val mutableLiveData = MutableLiveData<List<ProductListItem>>()
+            mutableLiveData.value = productTechList
+            return mutableLiveData
+        }
         TODO()
     }
 
-    fun getProductCategoryList(): List<ProductCategoryListItem> {
-        return categoryList
+    fun getProductCategoryList(): LiveData<List<ProductCategoryListItem>> {
+        val mutableLiveData = MutableLiveData<List<ProductCategoryListItem>>()
+        mutableLiveData.value = categoryList
+        return mutableLiveData
     }
 
-    fun getSaleTitleList(): List<ProductListItem> {
-        return productTechList
+    fun getSaleTitleList(): LiveData<List<SaleTitleListItem>> {
+        val mutableLiveData = MutableLiveData<List<SaleTitleListItem>>()
+        mutableLiveData.value = categoryTitlesList
+        return mutableLiveData
     }
 
     companion object {
