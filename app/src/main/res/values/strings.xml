@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LizaShop</string>
+    <string name="app_name">Liza Shop</string>
 
 
     <string name="my_account">Мой Аккаунт</string>
@@ -14,5 +14,22 @@
     <string name="account">Аккаунт</string>
     <string name="support">Поддержка</string>
     <string name="logout">Выход</string>
+    <string name="greeting_text">Магазин вашей мечты. Здесь Вы найдете всё, что захотите</string>
+    <string name="start_shopping">За покупками</string>
+    <string name="phone">Телефон</string>
+    <string name="password">Пароль</string>
+    <string name="log_in">Войти</string>
+    <string name="dont_have_account_reg">Нет аккаунта? <b>Зарегистрируйтесь</b></string>
+    <string name="already_have_acc_sign_in">Уже есть аккаунт? Войдите</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="name">Имя</string>
+    <string name="main">Главная</string>
+    <string name="cart">Корзина</string>
+    <string name="categories">Категории</string>
+    <string name="start_search">Начните поиск</string>
+    <string name="delivery">Доставка</string>
+    <string name="sale">Распродажа</string>
+    <string name="profile">Профиль</string>
 
 </resources>
