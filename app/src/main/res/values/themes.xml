@@ -6,4 +6,16 @@
     </style>
 
     <style name="Theme.LizaShop" parent="Base.Theme.LizaShop" />
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/white</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxBackgroundColor">@color/background</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
 </resources>

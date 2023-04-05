@@ -1,10 +1,8 @@
 package com.liza.lizashop.data.datasource
 
-import android.content.Context
 import com.liza.lizashop.R
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
 import com.liza.lizashop.domain.entity.ProductListItem
-import com.liza.lizashop.domain.entity.SettingsListItem
 
 class ShopRemoteDataSource {
     private val productTechList = listOf<ProductListItem>(
