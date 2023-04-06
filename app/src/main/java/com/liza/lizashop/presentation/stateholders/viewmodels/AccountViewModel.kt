@@ -1,6 +1,18 @@
 package com.liza.lizashop.presentation.stateholders.viewmodels
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
+import com.liza.lizashop.data.repository.LocalRepositoryImpl
+import com.liza.lizashop.domain.repository.LocalRepository
+import com.liza.lizashop.domain.usecase.GetUserSettingsListUseCase
 
-class AccountViewModel : ViewModel() {
+class AccountViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val repository = LocalRepositoryImpl(getApplication())
+
+    private val getUserSettingsUseCase = GetUserSettingsListUseCase(repository)
+
+    val settingsListLd = getUserSettingsUseCase.invoke()
+
 }

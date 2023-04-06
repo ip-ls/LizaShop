@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.LizaShop" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.LizaShop" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
@@ -14,6 +14,7 @@
         <item name="boxCornerRadiusTopStart">30dp</item>
         <item name="boxBackgroundColor">@color/background</item>
         <item name="android:textColorHint">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
 </resources>
