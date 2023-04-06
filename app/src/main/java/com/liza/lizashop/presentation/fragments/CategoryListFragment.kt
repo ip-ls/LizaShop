@@ -7,18 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.liza.lizashop.databinding.FragmentAccountBinding
+import com.liza.lizashop.databinding.FragmentCategoryListBinding
+import com.liza.lizashop.databinding.FragmentGreetingBinding
+import com.liza.lizashop.presentation.stateholders.adapters.CategoriesRvAdapter
 import com.liza.lizashop.presentation.stateholders.adapters.ProductRvAdapter
-import com.liza.lizashop.presentation.stateholders.adapters.SettingsRvAdapter
-import com.liza.lizashop.presentation.stateholders.viewmodels.AccountViewModel
+import com.liza.lizashop.presentation.stateholders.viewmodels.CategoryListViewModel
+import com.liza.lizashop.presentation.stateholders.viewmodels.LoginViewModel
 
-class AccountFragment : Fragment() {
+class CategoryListFragment : Fragment() {
 
-    private var _binding: FragmentAccountBinding? = null
+    private var _binding: FragmentCategoryListBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel by lazy {
-        ViewModelProvider(this)[AccountViewModel::class.java]
+        ViewModelProvider(this)[CategoryListViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -26,15 +28,15 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAccountBinding.inflate(inflater, container, false)
+        _binding = FragmentCategoryListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.settingsListLd.observe(viewLifecycleOwner, Observer {
+        viewModel.productsListLd.observe(viewLifecycleOwner, Observer {
             it?.let {
-                binding.settingsList.adapter = SettingsRvAdapter(it)
+                binding.productsList.adapter = ProductRvAdapter(it)
             }
         })
     }
@@ -43,5 +45,4 @@ class AccountFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

@@ -30,25 +30,25 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
+            android:text="28-30 Декабря. Вам придет уведомление о поступлении"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:text="28-30 Декабря. Вам придет уведомление о поступлении" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
+            android:text="Код 345"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDeliveryDate"
-            tools:text="Код 345" />
+            app:layout_constraintTop_toBottomOf="@+id/textDeliveryDate" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -57,10 +57,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:src="@drawable/qr_code_example"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/qr_code_example" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
