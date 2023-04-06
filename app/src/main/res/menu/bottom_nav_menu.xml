@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/fragment_main"
+        android:id="@+id/mainFragment"
         android:enabled="true"
         android:icon="@drawable/icon_menu_home"
         android:title="@string/main" />
 
     <item
-        android:id="@+id/fragment_categories"
+        android:id="@+id/categoriesFragment"
         android:enabled="true"
         android:icon="@drawable/icon_menu_category"
         android:title="@string/categories" />
 
-    <item
-        android:id="@+id/fragment_cart"
-        android:enabled="true"
-        android:icon="@drawable/icon_menu_cart"
-        android:title="@string/cart" />
+<!--    <item-->
+<!--        android:id="@+id/fragment_cart"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/icon_menu_cart"-->
+<!--        android:title="@string/cart" />-->
 
     <item
-        android:id="@+id/fragment_profile"
+        android:id="@+id/accountFragment"
         android:enabled="true"
         android:icon="@drawable/icon_menu_profile"
         android:title="@string/account" />

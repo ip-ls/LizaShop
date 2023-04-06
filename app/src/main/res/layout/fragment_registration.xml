@@ -13,8 +13,8 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_height="256dp"
+            android:layout_marginTop="32dp"
             android:contentDescription="@null"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,10 +29,11 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="32dp"
+            app:helperTextTextColor="@color/red"
+            app:hintTextColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:prefixText="+7"
             app:startIconDrawable="@drawable/icon_username"
             app:startIconTint="@color/white">
 
@@ -41,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
-                android:inputType="phone"
+                android:inputType="text"
                 android:maxLength="15"
                 android:textColor="@color/white" />
 
@@ -55,10 +56,13 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            app:helperTextTextColor="@color/red"
+            app:hintTextColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etNameLayout"
             app:prefixText="+7"
+            app:prefixTextColor="@color/white"
             app:startIconDrawable="@drawable/baseline_phone_24"
             app:startIconTint="@color/white">
 
@@ -68,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/phone"
                 android:inputType="phone"
-                android:maxLength="15"
+                android:maxLength="10"
                 android:textColor="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -81,6 +85,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            app:helperTextTextColor="@color/red"
+            app:hintTextColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,6 +115,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            app:helperTextTextColor="@color/red"
+            app:hintTextColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,10 +141,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button"
             android:text="@string/register"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@null"
             app:layout_constraintBottom_toTopOf="@+id/textLogin"
             app:layout_constraintEnd_toEndOf="@+id/etPasswordLayout"
             app:layout_constraintStart_toStartOf="@+id/etPasswordLayout"

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/greetingFragment">
+
+    <fragment
+        android:id="@+id/greetingFragment"
+        android:name="com.liza.lizashop.presentation.fragments.GreetingFragment"
+        android:label="GreetingFragment"
+        tools:layout="@layout/fragment_greeting">
+        <action
+            android:id="@+id/action_greetingFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.liza.lizashop.presentation.fragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_loginFragment_to_bottomNavGraph"
+            app:destination="@id/bottomNavGraph"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.liza.lizashop.presentation.fragments.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/bottomNavGraph"
+        app:startDestination="@id/mainFragment">
+        <fragment
+            android:id="@+id/topUpBalanceFragment"
+            android:name="com.liza.lizashop.presentation.fragments.TopUpBalanceFragment"
+            android:label="TopUpBalanceFragment"
+            tools:layout="@layout/fragment_top_up_balance"/>
+        <fragment
+            android:id="@+id/categoryListFragment"
+            android:name="com.liza.lizashop.presentation.fragments.CategoryListFragment"
+            android:label="CategoryListFragment"
+            tools:layout="@layout/fragment_category_list"/>
+        <fragment
+            android:id="@+id/mainFragment"
+            android:name="com.liza.lizashop.presentation.fragments.MainFragment"
+            android:label="MainFragment"
+            tools:layout="@layout/fragment_main" />
+        <fragment
+            android:id="@+id/categoriesFragment"
+            android:name="com.liza.lizashop.presentation.fragments.CategoriesFragment"
+            android:label="CategoriesFragment"
+            tools:layout="@layout/fragment_categories" >
+            <action
+                android:id="@+id/action_categoriesFragment_to_categoryListFragment"
+                app:destination="@id/categoryListFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out"
+                app:popEnterAnim="@android:anim/fade_in"
+                app:popExitAnim="@android:anim/fade_out" />
+        </fragment>
+        <fragment
+            android:id="@+id/accountFragment"
+            android:name="com.liza.lizashop.presentation.fragments.AccountFragment"
+            android:label="AccountFragment"
+            tools:layout="@layout/fragment_account" >
+            <action
+                android:id="@+id/action_accountFragment_to_topUpBalanceFragment"
+                app:destination="@id/topUpBalanceFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out"
+                app:popEnterAnim="@android:anim/fade_in"
+                app:popExitAnim="@android:anim/fade_out" />
+        </fragment>
+    </navigation>
+</navigation>

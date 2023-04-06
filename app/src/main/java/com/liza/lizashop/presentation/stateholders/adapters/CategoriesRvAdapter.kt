@@ -2,9 +2,14 @@ package com.liza.lizashop.presentation.stateholders.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.liza.lizashop.databinding.ItemCategoriesListBinding
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
+import com.liza.lizashop.presentation.fragments.CategoriesFragment
+import com.liza.lizashop.presentation.fragments.CategoriesFragmentDirections
+import com.liza.lizashop.presentation.fragments.CategoryListFragment
+import com.liza.lizashop.presentation.fragments.GreetingFragmentDirections
 
 class CategoriesRvAdapter(private val productCategoryList: List<ProductCategoryListItem>) :
     RecyclerView.Adapter<CategoriesRvAdapter.ViewHolder>() {
@@ -28,6 +33,11 @@ class CategoriesRvAdapter(private val productCategoryList: List<ProductCategoryL
         with(holder) {
             binding.textHeaderCategory.text = item.categoryName
             binding.imageCategory.setImageResource(item.imageRes)
+            itemView.setOnClickListener {
+                val action =
+                    CategoriesFragmentDirections.actionCategoriesFragmentToCategoryListFragment()
+                it.findNavController().navigate(action)
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.liza.lizashop.data.repository
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.liza.lizashop.data.datasource.DBLocalDataSource
 import com.liza.lizashop.domain.entity.CartListItem
 import com.liza.lizashop.domain.entity.SettingsListItem
@@ -12,7 +13,7 @@ class LocalRepositoryImpl(
 
     private val dataSource = DBLocalDataSource(context)
 
-    override fun getUserSettingsList(): List<SettingsListItem> {
+    override fun getUserSettingsList(): LiveData<List<SettingsListItem>> {
         return dataSource.getUserSettingsList()
     }
 
