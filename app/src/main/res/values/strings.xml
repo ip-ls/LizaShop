@@ -39,5 +39,6 @@
     <string name="balance">Баланс</string>
     <string name="current_card">Текущая карта</string>
     <string name="add_card">Добавить карту</string>
+    <string name="choose_all">Выбрать все</string>
 
 </resources>

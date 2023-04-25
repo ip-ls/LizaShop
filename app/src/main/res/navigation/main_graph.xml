@@ -55,6 +55,11 @@
         android:id="@+id/bottomNavGraph"
         app:startDestination="@id/mainFragment">
         <fragment
+            android:id="@+id/cartFragment"
+            android:name="com.liza.lizashop.presentation.fragments.CartFragment"
+            android:label="CartFragment"
+            tools:layout="@layout/fragment_cart" />
+        <fragment
             android:id="@+id/topUpBalanceFragment"
             android:name="com.liza.lizashop.presentation.fragments.TopUpBalanceFragment"
             android:label="TopUpBalanceFragment"
