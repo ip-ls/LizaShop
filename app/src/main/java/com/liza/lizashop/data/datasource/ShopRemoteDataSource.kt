@@ -72,19 +72,12 @@ class ShopRemoteDataSource {
     )
 
     private val categoryList = listOf<ProductCategoryListItem>(
-        ProductCategoryListItem(R.drawable.icon_category_shoes, "Обувь"),
-        ProductCategoryListItem(R.drawable.icon_category_shirt, "Одежда"),
-        ProductCategoryListItem(R.drawable.icon_category_food, "Еда"),
         ProductCategoryListItem(R.drawable.icon_category_glass, "Аксессуары"),
-        ProductCategoryListItem(R.drawable.icon_category_lipstick, "Косметика"),
         ProductCategoryListItem(R.drawable.icon_category_phone, "Техника"),
     )
 
     private val categoryTitlesList = listOf<SaleTitleListItem>(
-        SaleTitleListItem(R.drawable.sale_category_furniture, "Мебель для дома"),
         SaleTitleListItem(R.drawable.sale_category_tech, "Техника"),
-        SaleTitleListItem(R.drawable.sale_category_man_cloth, "Мужская одежда"),
-        SaleTitleListItem(R.drawable.sale_category_kids, "Дети"),
     )
 
     fun getProductList(category: String): LiveData<List<ProductListItem>> {
