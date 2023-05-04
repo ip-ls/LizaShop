@@ -1,5 +1,7 @@
 package com.liza.lizashop.presentation.stateholders.adapters
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +13,14 @@ import com.liza.lizashop.domain.entity.ProductListItem
 import com.liza.lizashop.domain.entity.SettingsListItem
 import com.liza.lizashop.presentation.fragments.AccountFragmentDirections
 import com.liza.lizashop.presentation.fragments.CategoriesFragmentDirections
+import com.liza.lizashop.presentation.fragments.LoginFragment
 
-class SettingsRvAdapter(private val settingsList: List<SettingsListItem>) :
+class SettingsRvAdapter(
+    private val settingsList: List<SettingsListItem>
+) :
     RecyclerView.Adapter<SettingsRvAdapter.ViewHolder>() {
+
+    var onLeaveItemClickListener: ((SettingsListItem) -> Unit)? = null
 
     inner class ViewHolder(val binding: ItemParagraphSettingsListBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -65,7 +72,13 @@ class SettingsRvAdapter(private val settingsList: List<SettingsListItem>) :
                 binding.textHeaderSetting.text = item.titleSetting
             }
         }
+        holder.binding.root.setOnClickListener {
+            onLeaveItemClickListener?.invoke(item)
+        }
     }
 
+    companion object {
 
+        private const val LEAVE_ACC = 7
+    }
 }
