@@ -1,16 +1,19 @@
 package com.liza.lizashop.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.liza.lizashop.R
 import com.liza.lizashop.databinding.FragmentLoginBinding
+import com.liza.lizashop.domain.entity.LoginUser
 import com.liza.lizashop.presentation.stateholders.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {
@@ -38,8 +41,30 @@ class LoginFragment : Fragment() {
         bottomNavView.visibility = View.GONE
         binding.buttonLogin.setOnClickListener {
             if (checkErrors()) {
-                val action = LoginFragmentDirections.actionLoginFragmentToBottomNavGraph()
-                view.findNavController().navigate(action)
+                viewModel.checkValid(LoginUser(
+                    binding.etPhone.text.toString(),
+                    binding.etPassword.text.toString()
+                ))
+                viewModel.checkLogin.observe(viewLifecycleOwner, Observer {
+                    if (it) {
+                        // write
+                        val sharedPrefWrite = requireActivity().getPreferences(Context.MODE_PRIVATE)
+                        val editor = sharedPrefWrite.edit()
+                        editor.putBoolean(
+                            SHARED_PREF_LOGIN_ED,
+                            true
+                        )
+                        editor.apply()
+
+                        val action = LoginFragmentDirections.actionLoginFragmentToBottomNavGraph()
+                        view.findNavController().navigate(action)
+                    } else {
+                        binding.etPhoneLayout.helperText = getString(R.string.incorrect_number_or_password)
+                        binding.etPhone.doOnTextChanged { text, start, before, count ->
+                            binding.etPhoneLayout.helperText = ""
+                        }
+                    }
+                })
             }
         }
         binding.textRegister.setOnClickListener {
@@ -76,6 +101,11 @@ class LoginFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+
+        const val SHARED_PREF_LOGIN_ED = "login_ed"
     }
 
 }

@@ -18,10 +18,8 @@ class DBLocalDataSource(
 
         SettingsListItem(0, context.getString(R.string.notification), false),
         SettingsListItem(R.drawable.icon_notification, context.getString(R.string.push_notification), true),
-        SettingsListItem(R.drawable.icon_notification, context.getString(R.string.promotions_and_offers), true),
 
         SettingsListItem(0, context.getString(R.string.logout), false),
-        SettingsListItem(R.drawable.icon_support, context.getString(R.string.support), true),
         SettingsListItem(R.drawable.icon_logout, context.getString(R.string.logout), true),
     )
 
@@ -30,5 +28,4 @@ class DBLocalDataSource(
         mutableLiveData.value = userSettings
         return mutableLiveData
     }
-
 }

@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
-    app:startDestination="@id/greetingFragment">
+    android:id="@+id/main_graph">
 
     <fragment
         android:id="@+id/greetingFragment"
@@ -34,9 +33,11 @@
             android:id="@+id/action_loginFragment_to_bottomNavGraph"
             app:destination="@id/bottomNavGraph"
             app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@+id/main_graph"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right" />
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -54,6 +55,11 @@
     <navigation
         android:id="@+id/bottomNavGraph"
         app:startDestination="@id/mainFragment">
+        <fragment
+            android:id="@+id/cartFragment"
+            android:name="com.liza.lizashop.presentation.fragments.CartFragment"
+            android:label="CartFragment"
+            tools:layout="@layout/fragment_cart" />
         <fragment
             android:id="@+id/topUpBalanceFragment"
             android:name="com.liza.lizashop.presentation.fragments.TopUpBalanceFragment"
