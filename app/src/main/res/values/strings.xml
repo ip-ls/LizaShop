@@ -34,10 +34,12 @@
     <string name="passwords_mismatch">Пароли не совпадают</string>
     <string name="field_doesnt_be_empty">Поле не может быть пустым</string>
     <string name="incorrect_number_format">Неверный формат номера</string>
+    <string name="incorrect_number_or_password">Номер телефона или пароль неверны</string>
     <string name="buy">Купить</string>
     <string name="tech">Техника</string>
     <string name="balance">Баланс</string>
     <string name="current_card">Текущая карта</string>
     <string name="add_card">Добавить карту</string>
+    <string name="choose_all">Выбрать все</string>
 
 </resources>

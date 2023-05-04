@@ -4,5 +4,6 @@ data class CartListItem(
     val imageRes: Int,
     val productName: String,
     val price: String,
-    var productCount: Int
+    var productCount: Int,
+    var checked: Boolean
 )

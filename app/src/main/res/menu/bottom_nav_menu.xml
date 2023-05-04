@@ -12,11 +12,11 @@
         android:icon="@drawable/icon_menu_category"
         android:title="@string/categories" />
 
-<!--    <item-->
-<!--        android:id="@+id/fragment_cart"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/icon_menu_cart"-->
-<!--        android:title="@string/cart" />-->
+    <item
+        android:id="@+id/cartFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_menu_cart"
+        android:title="@string/cart" />
 
     <item
         android:id="@+id/accountFragment"
