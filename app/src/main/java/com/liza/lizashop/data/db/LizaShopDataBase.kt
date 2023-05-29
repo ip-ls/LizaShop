@@ -4,19 +4,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.liza.lizashop.data.db.dao.CartProductDao
+import com.liza.lizashop.data.db.dao.CartDao
 import com.liza.lizashop.data.db.dao.ShopProductDao
 import com.liza.lizashop.data.db.dao.UserDao
-import com.liza.lizashop.data.db.entities.CartProduct
 import com.liza.lizashop.data.db.entities.ShopProduct
 import com.liza.lizashop.data.db.entities.User
+import com.liza.lizashop.data.db.models.Cart
 
 
-@Database(entities = [User::class, ShopProduct::class, CartProduct::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, ShopProduct::class, Cart::class], version = 1, exportSchema = false)
 abstract class LizaShopDataBase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun shopProductDao(): ShopProductDao
-    abstract fun cartProduct(): CartProductDao
+    abstract fun cartDao(): CartDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the

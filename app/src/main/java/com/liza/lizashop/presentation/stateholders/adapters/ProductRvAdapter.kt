@@ -9,6 +9,8 @@ import com.liza.lizashop.domain.entity.ProductListItem
 class ProductRvAdapter(private val productsList: List<ProductListItem>) :
     RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
 
+    var onProductListClickListener: ((ProductListItem) -> Unit)? = null
+
     inner class ViewHolder(val binding: ItemProductListBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -29,6 +31,9 @@ class ProductRvAdapter(private val productsList: List<ProductListItem>) :
             binding.imageProduct.setImageResource(item.imageRes)
             binding.textProductName.text = item.productName
             binding.textPrice.text = item.price
+            itemView.setOnClickListener {
+                onProductListClickListener?.invoke(item)
+            }
         }
     }
 }

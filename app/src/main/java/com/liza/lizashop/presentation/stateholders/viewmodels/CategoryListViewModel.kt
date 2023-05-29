@@ -1,19 +1,29 @@
 package com.liza.lizashop.presentation.stateholders.viewmodels
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.liza.lizashop.data.repository.ShopRepositoryImpl
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
 import com.liza.lizashop.domain.entity.ProductListItem
+import com.liza.lizashop.domain.usecase.AddProductInCartUseCase
 import com.liza.lizashop.domain.usecase.GetProductCategoriesListUseCase
 import com.liza.lizashop.domain.usecase.GetProductsListUseCase
+import kotlinx.coroutines.launch
 
-class CategoryListViewModel : ViewModel() {
+class CategoryListViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repositoryImpl = ShopRepositoryImpl()
+    private val repositoryImpl = ShopRepositoryImpl(application)
 
     private val getProductCategoryListItem = GetProductsListUseCase(repositoryImpl)
+    private val addProductInCartUseCase = AddProductInCartUseCase(repositoryImpl)
 
     val productsListLd: LiveData<List<ProductListItem>> = getProductCategoryListItem.invoke("tech")
+
+    fun addProductInCart(productListItem: ProductListItem) = viewModelScope.launch {
+        addProductInCartUseCase(productListItem)
+    }
 
 }

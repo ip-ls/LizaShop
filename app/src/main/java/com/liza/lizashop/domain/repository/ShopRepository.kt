@@ -13,4 +13,5 @@ interface ShopRepository {
 
     fun getSaleTitleList(): LiveData<List<SaleTitleListItem>>
 
+    fun addProductInCart(productListItem: ProductListItem)
 }

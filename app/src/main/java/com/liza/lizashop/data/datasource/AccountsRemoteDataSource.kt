@@ -8,7 +8,6 @@ import com.liza.lizashop.data.db.dao.UserDao
 import com.liza.lizashop.data.db.entities.User
 import com.liza.lizashop.domain.entity.LoginUser
 import com.liza.lizashop.domain.entity.RegistrationUser
-import java.lang.String
 import kotlin.Boolean
 
 class AccountsRemoteDataSource(private val userDao: UserDao, private val context: Context) {
