@@ -1,12 +1,12 @@
 [versions]
 com-android-application = "7.4.1"
 org-jetbrains-kotlin-android = "1.8.0"
-core-ktx = "1.10.0"
+core-ktx = "1.10.1"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
-material = "1.8.0"
+material = "1.9.0"
 constraintlayout = "2.1.4"
 androix-navigation = "2.5.3"
 room = "2.5.1"
@@ -29,8 +29,8 @@ androidx-room-room-compiler = { group = "androidx.room", name = "room-compiler",
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "com-android-application" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
-androidx-navigation-safeargs-kotlin = { id = 'androidx.navigation.safeargs.kotlin', version.ref = "androix-navigation" }
-kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
+androidx-navigation-safeargs-kotlin = { id = 'androidx.navigation.safeargs.kotlin', version = "2.5.3" }
+ksp = { id = 'com.google.devtools.ksp', version.ref = "ksp" }
 
 [bundles]
 

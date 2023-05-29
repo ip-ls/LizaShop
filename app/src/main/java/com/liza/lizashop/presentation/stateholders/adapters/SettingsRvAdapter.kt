@@ -72,9 +72,10 @@ class SettingsRvAdapter(
                 binding.textHeaderSetting.text = item.titleSetting
             }
         }
-        holder.binding.root.setOnClickListener {
-            onLeaveItemClickListener?.invoke(item)
-        }
+        if (position == LEAVE_ACC)
+            holder.binding.root.setOnClickListener {
+                onLeaveItemClickListener?.invoke(item)
+            }
     }
 
     companion object {
