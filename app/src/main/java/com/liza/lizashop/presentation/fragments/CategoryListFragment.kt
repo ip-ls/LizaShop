@@ -36,7 +36,11 @@ class CategoryListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.productsListLd.observe(viewLifecycleOwner, Observer {
             it?.let {
-                binding.productsList.adapter = ProductRvAdapter(it)
+                val adapter = ProductRvAdapter(it)
+                adapter.onProductListClickListener = {
+                    viewModel.addProductInCart(it)
+                }
+                binding.productsList.adapter = adapter
             }
         })
     }

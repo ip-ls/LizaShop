@@ -17,7 +17,27 @@ class LocalRepositoryImpl(
         return dataSource.getUserSettingsList()
     }
 
-    override fun getCartListUseCase(): List<CartListItem> {
-        TODO("Not yet implemented")
+    override fun getCartListUseCase(): LiveData<List<CartListItem>> {
+        return dataSource.getCartListUseCase()
+    }
+
+    fun addProductCountCart(id: Int) {
+        dataSource.addProductCountCart(id)
+    }
+
+    fun subProductCountCart(id: Int, count: Int) {
+        if (count > 0)
+            if (count == 1)
+                dataSource.removeProduct(id)
+            else
+                dataSource.subProductCountCart(id)
+    }
+
+    fun checkedProductCart(id: Int) {
+        dataSource.checkedProductCart(id)
+    }
+
+    fun checkedAllProductsCart() {
+        dataSource.checkedAllProductsCart()
     }
 }
