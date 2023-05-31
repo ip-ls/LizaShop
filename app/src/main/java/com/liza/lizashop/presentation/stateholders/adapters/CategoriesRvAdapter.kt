@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.liza.lizashop.data.db.LizaShopDataBase
 import com.liza.lizashop.databinding.ItemCategoriesListBinding
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
 import com.liza.lizashop.presentation.fragments.CategoriesFragment
@@ -34,9 +35,21 @@ class CategoriesRvAdapter(private val productCategoryList: List<ProductCategoryL
             binding.textHeaderCategory.text = item.categoryName
             binding.imageCategory.setImageResource(item.imageRes)
             itemView.setOnClickListener {
-                val action =
-                    CategoriesFragmentDirections.actionCategoriesFragmentToCategoryListFragment()
-                it.findNavController().navigate(action)
+                if (position == 0) {
+                    val action =
+                        CategoriesFragmentDirections.actionCategoriesFragmentToCategoryListFragment(
+                            LizaShopDataBase.CATEGORY_ACCESSORIES
+                        )
+                    it.findNavController().navigate(action)
+                } else if (position == 1) {
+                    val action =
+                        CategoriesFragmentDirections.actionCategoriesFragmentToCategoryListFragment(
+                            LizaShopDataBase.CATEGORY_TECH
+                        )
+                    it.findNavController().navigate(action)
+                }
+
+
             }
         }
     }
