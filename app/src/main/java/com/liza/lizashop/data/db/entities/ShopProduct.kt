@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class ShopProduct (
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "imageRes") val imageRes: Int,
-    @ColumnInfo(name = "price") val phone: Int,
-    @ColumnInfo(name = "name") val name: String
+    @ColumnInfo(name = "price") val productName: String,
+    @ColumnInfo(name = "name") val price: String,
+    @ColumnInfo(name = "category") val category: String
 )

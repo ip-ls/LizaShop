@@ -1,4 +1,4 @@
-package com.liza.lizashop.data.db.models
+package com.liza.lizashop.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

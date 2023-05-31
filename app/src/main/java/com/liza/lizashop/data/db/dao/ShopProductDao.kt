@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ShopProductDao {
-    @Query("SELECT * FROM ShopProduct")
-    fun getAllShopProducts(): LiveData<List<ShopProduct>>
+    @Query("SELECT * FROM ShopProduct WHERE category LIKE :category")
+    fun getAllShopProducts(category: String): LiveData<List<ShopProduct>>
 
     @Query("SELECT * FROM ShopProduct WHERE uid LIKE :uid")
     fun findById(uid: Int): LiveData<ShopProduct>

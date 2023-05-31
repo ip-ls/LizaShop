@@ -1,7 +1,7 @@
 package com.liza.lizashop.data
 
 
-import com.liza.lizashop.data.db.models.Cart
+import com.liza.lizashop.data.db.entities.Cart
 import com.liza.lizashop.domain.entity.CartListItem
 
 object CartMapper {

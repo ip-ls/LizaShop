@@ -2,13 +2,9 @@ package com.liza.lizashop.presentation.stateholders.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.viewModelScope
-import com.liza.lizashop.data.db.models.Cart
 import com.liza.lizashop.data.repository.LocalRepositoryImpl
 import com.liza.lizashop.domain.entity.CartListItem
 import com.liza.lizashop.domain.usecase.GetCartListUseCase
-import com.liza.lizashop.domain.usecase.GetUserSettingsListUseCase
-import kotlinx.coroutines.launch
 
 class CartViewModel(application: Application) : AndroidViewModel(application) {
 
