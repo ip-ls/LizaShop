@@ -69,7 +69,11 @@
             android:id="@+id/categoryListFragment"
             android:name="com.liza.lizashop.presentation.fragments.CategoryListFragment"
             android:label="CategoryListFragment"
-            tools:layout="@layout/fragment_category_list"/>
+            tools:layout="@layout/fragment_category_list">
+            <argument
+                android:name="CATEGORY_NAME"
+                app:argType="string" />
+        </fragment>
         <fragment
             android:id="@+id/mainFragment"
             android:name="com.liza.lizashop.presentation.fragments.MainFragment"

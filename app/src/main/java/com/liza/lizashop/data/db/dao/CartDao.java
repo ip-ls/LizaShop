@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.liza.lizashop.data.db.models.Cart;
+import com.liza.lizashop.data.db.entities.Cart;
 
 import java.util.List;
 
