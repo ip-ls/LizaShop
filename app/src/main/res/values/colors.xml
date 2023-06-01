@@ -7,6 +7,7 @@
 
 
     <color name="background">#DCB6B6</color>
+    <color name="background_admin">#AECEBD</color>
     <color name="textSecondary">#66665f</color>
     <color name="switchChecked">#F3442C</color>
 

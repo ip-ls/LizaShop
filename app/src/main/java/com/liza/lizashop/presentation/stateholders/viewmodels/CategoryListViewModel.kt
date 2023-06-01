@@ -13,19 +13,28 @@ import com.liza.lizashop.domain.usecase.GetProductCategoriesListUseCase
 import com.liza.lizashop.domain.usecase.GetProductsListUseCase
 import kotlinx.coroutines.launch
 
-class CategoryListViewModel(application: Application, category: String) :
-    AndroidViewModel(application) {
+class CategoryListViewModel(
+    application: Application,
+    category: String,
+    phone: String
+) : AndroidViewModel(application) {
 
     private val repositoryImpl = ShopRepositoryImpl(application)
 
     private val getProductCategoryListItem = GetProductsListUseCase(repositoryImpl)
     private val addProductInCartUseCase = AddProductInCartUseCase(repositoryImpl)
 
+    val roleLD = repositoryImpl.getRole(phone)
+
     val productsListLd: LiveData<List<ProductListItem>> =
         getProductCategoryListItem.invoke(category)
 
     fun addProductInCart(productListItem: ProductListItem, phone: String) = viewModelScope.launch {
         addProductInCartUseCase(productListItem, phone)
+    }
+
+    fun addProduct(productListItem: ProductListItem) {
+        repositoryImpl.addProduct(productListItem)
     }
 
 }

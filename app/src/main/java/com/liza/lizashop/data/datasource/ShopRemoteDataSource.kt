@@ -12,6 +12,7 @@ import com.liza.lizashop.data.db.entities.Cart
 import com.liza.lizashop.domain.entity.CartListItem
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
 import com.liza.lizashop.domain.entity.ProductListItem
+import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.domain.entity.SaleTitleListItem
 
 class ShopRemoteDataSource(
@@ -20,6 +21,7 @@ class ShopRemoteDataSource(
 
     private val db = LizaShopDataBase.getDatabase(context)
     private val cartDao = db.cartDao()
+    private val userDao = db.userDao()
     private val shopProductDao = db.shopProductDao()
 
     private val categoryList = listOf<ProductCategoryListItem>(
@@ -65,6 +67,17 @@ class ShopRemoteDataSource(
                     phone
                 )
             )
+        }
+    }
+
+    fun getRole(phone: String) : LiveData<Roles> {
+        return userDao.getRole(phone)
+    }
+
+    fun addProduct(productListItem: ProductListItem) {
+        val product = ProductMapper.mapEntityToDbModel(productListItem)
+        db.queryExecutor.execute {
+            shopProductDao.insertAll(product)
         }
     }
 }
