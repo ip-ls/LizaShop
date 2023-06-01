@@ -6,5 +6,6 @@ data class CartListItem(
     val productName: String,
     val price: String,
     var productCount: Int,
-    var checked: Boolean
+    var checked: Boolean,
+    var phone: String
 )

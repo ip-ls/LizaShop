@@ -1,9 +1,11 @@
 package com.liza.lizashop.presentation.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.liza.lizashop.data.db.LizaShopDataBase
 import com.liza.lizashop.databinding.FragmentCategoryListBinding
 import com.liza.lizashop.databinding.FragmentGreetingBinding
+import com.liza.lizashop.presentation.fragments.LoginFragment.Companion
 import com.liza.lizashop.presentation.stateholders.adapters.CategoriesRvAdapter
 import com.liza.lizashop.presentation.stateholders.adapters.ProductRvAdapter
 import com.liza.lizashop.presentation.stateholders.viewmodels.CategoriesListViewModelFactory
@@ -56,7 +59,12 @@ class CategoryListFragment : Fragment() {
             it?.let {
                 val adapter = ProductRvAdapter(it)
                 adapter.onProductListClickListener = {
-                    viewModel.addProductInCart(it)
+
+                    val sharedPrefRead: SharedPreferences =
+                        requireActivity().getPreferences(AppCompatActivity.MODE_PRIVATE)
+                    val phone = sharedPrefRead.getString(LoginFragment.SHARED_PREF_LOGIN_ED, "")
+
+                    viewModel.addProductInCart(it, phone ?: "")
                 }
                 binding.productsList.adapter = adapter
             }

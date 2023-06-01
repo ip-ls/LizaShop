@@ -27,4 +27,7 @@ interface UserDao {
 
     @Insert
     fun insertAll(vararg users: User)
+
+    @Query("SELECT name FROM user WHERE phone LIKE :phone")
+    fun getUserName(phone: String) : LiveData<String>
 }

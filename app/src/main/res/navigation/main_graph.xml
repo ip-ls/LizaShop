@@ -78,7 +78,11 @@
             android:id="@+id/mainFragment"
             android:name="com.liza.lizashop.presentation.fragments.MainFragment"
             android:label="MainFragment"
-            tools:layout="@layout/fragment_main" />
+            tools:layout="@layout/fragment_main" >
+            <action
+                android:id="@+id/action_mainFragment_to_categoryListFragment"
+                app:destination="@id/categoryListFragment" />
+        </fragment>
         <fragment
             android:id="@+id/categoriesFragment"
             android:name="com.liza.lizashop.presentation.fragments.CategoriesFragment"

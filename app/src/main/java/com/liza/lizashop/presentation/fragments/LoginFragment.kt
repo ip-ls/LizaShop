@@ -50,9 +50,9 @@ class LoginFragment : Fragment() {
                         // write
                         val sharedPrefWrite = requireActivity().getPreferences(Context.MODE_PRIVATE)
                         val editor = sharedPrefWrite.edit()
-                        editor.putBoolean(
+                        editor.putString(
                             SHARED_PREF_LOGIN_ED,
-                            true
+                            binding.etPhone.text.toString()
                         )
                         editor.apply()
 
