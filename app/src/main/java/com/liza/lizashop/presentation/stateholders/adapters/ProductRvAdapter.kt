@@ -2,12 +2,21 @@ package com.liza.lizashop.presentation.stateholders.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.liza.lizashop.databinding.ItemProductListBinding
 import com.liza.lizashop.domain.entity.ProductListItem
 
-class ProductRvAdapter(private val productsList: List<ProductListItem>) :
+class ProductRvAdapter() :
     RecyclerView.Adapter<ProductRvAdapter.ViewHolder>() {
+
+    var productsList = listOf<ProductListItem>()
+        set(value) {
+            val callback = ShopListDiffCallback(productsList, value)
+            val diffResult = DiffUtil.calculateDiff(callback)
+            diffResult.dispatchUpdatesTo(this)
+            field = value
+        }
 
     var onProductListClickListener: ((ProductListItem) -> Unit)? = null
 

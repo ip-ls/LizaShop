@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.liza.lizashop.R
 import com.liza.lizashop.databinding.FragmentRegistrationBinding
 import com.liza.lizashop.domain.entity.RegistrationUser
+import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.presentation.stateholders.viewmodels.RegistrationViewModel
 
 class RegistrationFragment : Fragment() {
@@ -48,7 +49,8 @@ class RegistrationFragment : Fragment() {
                         RegistrationUser(
                             name = binding.etName.text.toString(),
                             phone = binding.etPhone.text.toString(),
-                            password = binding.etPassword.text.toString()
+                            password = binding.etPassword.text.toString(),
+                            role = Roles.USER
                         )
                     )
                     val action =

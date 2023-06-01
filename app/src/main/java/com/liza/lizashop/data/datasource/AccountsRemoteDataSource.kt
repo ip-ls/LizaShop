@@ -8,6 +8,7 @@ import com.liza.lizashop.data.db.dao.UserDao
 import com.liza.lizashop.data.db.entities.User
 import com.liza.lizashop.domain.entity.LoginUser
 import com.liza.lizashop.domain.entity.RegistrationUser
+import com.liza.lizashop.domain.entity.Roles
 import kotlin.Boolean
 
 class AccountsRemoteDataSource(private val userDao: UserDao, private val context: Context) {
@@ -16,7 +17,7 @@ class AccountsRemoteDataSource(private val userDao: UserDao, private val context
         return userDao.checkUserLogin(loginUser.phone, loginUser.password)
     }
 
-    fun registrationUser(registrationUser: RegistrationUser) {
+    fun registrationUser(registrationUser: RegistrationUser, role: Roles) {
         Log.d("AccountsRemoteDataSource", registrationUser.toString())
         val db = LizaShopDataBase.getDatabase(context)
         val userDao = db.userDao()
@@ -25,9 +26,9 @@ class AccountsRemoteDataSource(private val userDao: UserDao, private val context
                 phone = registrationUser.phone,
                 name = registrationUser.name,
                 surname = registrationUser.name,
-                hashPassword = registrationUser.password
+                hashPassword = registrationUser.password,
+                role = role
             ))
         }
     }
-
 }

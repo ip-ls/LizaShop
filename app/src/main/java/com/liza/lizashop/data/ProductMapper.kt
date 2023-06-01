@@ -15,12 +15,22 @@ object ProductMapper {
         return list
     }
 
-    private fun mapDbModelToEntity(el: ShopProduct): ProductListItem {
+    fun mapDbModelToEntity(el: ShopProduct): ProductListItem {
         return ProductListItem(
             id = el.uid,
             imageRes = el.imageRes,
             productName = el.productName,
-            price = el.price
+            price = el.price,
+            category = el.category
+        )
+    }
+
+    fun mapEntityToDbModel(productListItem: ProductListItem): ShopProduct {
+        return ShopProduct(
+            imageRes = productListItem.imageRes,
+            productName = productListItem.productName,
+            price = productListItem.price,
+            category = productListItem.category
         )
     }
 

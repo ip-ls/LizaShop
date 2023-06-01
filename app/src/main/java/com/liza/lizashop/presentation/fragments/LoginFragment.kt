@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.liza.lizashop.R
 import com.liza.lizashop.databinding.FragmentLoginBinding
 import com.liza.lizashop.domain.entity.LoginUser
+import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.presentation.stateholders.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {

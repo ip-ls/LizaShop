@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.liza.lizashop.domain.entity.Roles
 import org.jetbrains.annotations.NotNull
 import java.sql.Blob
 
@@ -15,5 +16,6 @@ data class User(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "surname") val surname: String,
     @ColumnInfo(name = "balance") val balance: Int = 0,
-    @ColumnInfo(name = "hash_password") val hashPassword: String
+    @ColumnInfo(name = "hash_password") val hashPassword: String,
+    @ColumnInfo(name = "role") val role: Roles
 )

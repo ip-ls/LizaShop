@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.liza.lizashop.data.db.entities.User
+import com.liza.lizashop.domain.entity.Roles
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -30,4 +31,7 @@ interface UserDao {
 
     @Query("SELECT name FROM user WHERE phone LIKE :phone")
     fun getUserName(phone: String) : LiveData<String>
+
+    @Query("SELECT role FROM user WHERE phone LIKE :phone")
+    fun getRole(phone: String) : LiveData<Roles>
 }
