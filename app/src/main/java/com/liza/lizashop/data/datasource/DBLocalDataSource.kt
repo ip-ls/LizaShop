@@ -81,4 +81,8 @@ class DBLocalDataSource(
             cartDao.checkedTrueAllProductsCart()
         }
     }
+
+    fun getUserName(phone: String): LiveData<String> {
+        return db.userDao().getUserName(phone)
+    }
 }

@@ -33,6 +33,10 @@ class LocalRepositoryImpl(
                 dataSource.subProductCountCart(id)
     }
 
+    fun getUserName(phone: String) : LiveData<String> {
+        return dataSource.getUserName(phone)
+    }
+
     fun checkedProductCart(id: Int) {
         dataSource.checkedProductCart(id)
     }
