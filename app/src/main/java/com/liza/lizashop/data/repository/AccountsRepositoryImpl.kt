@@ -6,6 +6,7 @@ import com.liza.lizashop.data.datasource.AccountsRemoteDataSource
 import com.liza.lizashop.data.db.LizaShopDataBase
 import com.liza.lizashop.domain.entity.LoginUser
 import com.liza.lizashop.domain.entity.RegistrationUser
+import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.domain.repository.AccountsRepository
 
 class AccountsRepositoryImpl(context: Context) : AccountsRepository {
@@ -17,8 +18,10 @@ class AccountsRepositoryImpl(context: Context) : AccountsRepository {
         return dataSource.loginUser(loginUser)
     }
 
-    override fun registrationUser(registrationUser: RegistrationUser): Boolean {
-        dataSource.registrationUser(registrationUser)
+    override fun registrationUser(registrationUser: RegistrationUser, role: Roles): Boolean {
+        dataSource.registrationUser(registrationUser, role)
         return true
     }
+
+
 }

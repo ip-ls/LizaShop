@@ -13,6 +13,7 @@ import com.liza.lizashop.data.db.entities.ShopProduct
 import com.liza.lizashop.data.db.entities.User
 import com.liza.lizashop.data.db.entities.Cart
 import com.liza.lizashop.domain.entity.ProductListItem
+import com.liza.lizashop.domain.entity.Roles
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -46,8 +47,7 @@ abstract class LizaShopDataBase : RoomDatabase() {
                     context.applicationContext,
                     LizaShopDataBase::class.java,
                     "liza_shop_database"
-                )
-                    .addCallback(object : RoomDatabase.Callback() {
+                ).addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
                             CoroutineScope(Dispatchers.IO).launch {
@@ -182,6 +182,16 @@ abstract class LizaShopDataBase : RoomDatabase() {
                                 INSTANCE?.shopProductDao()
                                     ?.insertAll(*productTechList.toTypedArray())
 
+                                INSTANCE?.userDao()
+                                    ?.insertAll(User(
+                                        1,
+                                        "0000000000",
+                                        "Admin",
+                                        "Admin",
+                                        0,
+                                        "123",
+                                        Roles.ADMIN
+                                    ))
                             }
                         }
                     })

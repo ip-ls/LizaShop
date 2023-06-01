@@ -16,9 +16,6 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     private val loginUserUseCase = LoginUserUseCase(repository)
 
-    /**
-     * Danger moment with lateinit var
-     */
     lateinit var checkLogin: LiveData<Boolean>
 
 

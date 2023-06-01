@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.liza.lizashop.data.repository.AccountsRepositoryImpl
 import com.liza.lizashop.domain.entity.RegistrationUser
+import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.domain.usecase.RegistrationUserUseCase
 
 class RegistrationViewModel(application: Application) : AndroidViewModel(application) {
@@ -13,6 +14,6 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
     private val registrationUseCase = RegistrationUserUseCase(repository)
 
     fun register(registrationUser: RegistrationUser) {
-        registrationUseCase.invoke(registrationUser)
+        registrationUseCase.invoke(registrationUser, Roles.USER)
     }
 }
