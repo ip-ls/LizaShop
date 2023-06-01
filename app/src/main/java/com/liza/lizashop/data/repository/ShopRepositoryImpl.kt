@@ -24,8 +24,8 @@ class ShopRepositoryImpl(context: Context) : ShopRepository {
         return dataSource.getSaleTitleList()
     }
 
-    override fun addProductInCart(productListItem: ProductListItem) {
-        dataSource.addProductInCart(productListItem)
+    override fun addProductInCart(productListItem: ProductListItem, phone: String) {
+        dataSource.addProductInCart(productListItem, phone)
     }
 
 

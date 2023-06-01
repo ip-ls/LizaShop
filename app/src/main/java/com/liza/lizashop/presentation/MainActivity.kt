@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         // read
         val sharedPrefRead: SharedPreferences = getPreferences(MODE_PRIVATE)
         val logined = sharedPrefRead.getString(LoginFragment.SHARED_PREF_LOGIN_ED, "")
-        Log.d("hehe", logined.toString())
-
 
         val navHost =
             supportFragmentManager.findFragmentById(R.id.bottom_fragment_container) as NavHostFragment

@@ -12,8 +12,8 @@ import java.util.List;
 
 @Dao
 public interface CartDao {
-    @Query("SELECT * FROM cart")
-    LiveData<List<Cart>> getCartList();
+    @Query("SELECT * FROM cart WHERE :phone LIKE phone")
+    LiveData<List<Cart>> getCartList(String phone);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Cart cart);

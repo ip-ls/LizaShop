@@ -8,6 +8,6 @@ interface LocalRepository {
 
     fun getUserSettingsList(): LiveData<List<SettingsListItem>>
 
-    fun getCartListUseCase(): LiveData<List<CartListItem>>
+    fun getCartListUseCase(phone: String): LiveData<List<CartListItem>>
 
 }

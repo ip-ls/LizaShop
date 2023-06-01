@@ -21,7 +21,8 @@ object CartMapper {
             productName = cartListItem.productName,
             price = cartListItem.price,
             productCount = cartListItem.productCount,
-            checked = cartListItem.checked
+            checked = cartListItem.checked,
+            phone = cartListItem.phone
         )
     }
 
@@ -32,7 +33,8 @@ object CartMapper {
             productName = cart.productName,
             price = cart.price,
             productCount = cart.productCount,
-            checked = cart.checked
+            checked = cart.checked,
+            phone = cart.phone
         )
     }
 

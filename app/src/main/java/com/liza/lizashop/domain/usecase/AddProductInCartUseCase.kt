@@ -10,8 +10,8 @@ class AddProductInCartUseCase(
     private val repository: ShopRepository
 ) {
 
-    suspend operator fun invoke(productListItem: ProductListItem) {
-        repository.addProductInCart(productListItem)
+    operator fun invoke(productListItem: ProductListItem, phone: String) {
+        repository.addProductInCart(productListItem, phone)
     }
 
 }

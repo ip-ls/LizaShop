@@ -1,5 +1,6 @@
 package com.liza.lizashop.data.db.entities
 
+import android.provider.ContactsContract.CommonDataKinds.Phone
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -11,5 +12,6 @@ data class Cart(
     @ColumnInfo(name = "productName") val productName: String,
     @ColumnInfo(name = "price") val price: String,
     @ColumnInfo(name = "productCount") var productCount: Int,
-    @ColumnInfo(name = "checked") var checked: Boolean
+    @ColumnInfo(name = "checked") var checked: Boolean,
+    @ColumnInfo(name = "phone") var phone: String
 )
