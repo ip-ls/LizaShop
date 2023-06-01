@@ -17,8 +17,8 @@ class LocalRepositoryImpl(
         return dataSource.getUserSettingsList()
     }
 
-    override fun getCartListUseCase(): LiveData<List<CartListItem>> {
-        return dataSource.getCartListUseCase()
+    override fun getCartListUseCase(phone: String): LiveData<List<CartListItem>> {
+        return dataSource.getCartListUseCase(phone)
     }
 
     fun addProductCountCart(id: Int) {
@@ -31,6 +31,10 @@ class LocalRepositoryImpl(
                 dataSource.removeProduct(id)
             else
                 dataSource.subProductCountCart(id)
+    }
+
+    fun getUserName(phone: String) : LiveData<String> {
+        return dataSource.getUserName(phone)
     }
 
     fun checkedProductCart(id: Int) {

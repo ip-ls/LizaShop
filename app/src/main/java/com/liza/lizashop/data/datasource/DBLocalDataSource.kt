@@ -44,9 +44,9 @@ class DBLocalDataSource(
         return mutableLiveData
     }
 
-    fun getCartListUseCase(): LiveData<List<CartListItem>> =
+    fun getCartListUseCase(phone: String): LiveData<List<CartListItem>> =
         MediatorLiveData<List<CartListItem>>().apply {
-            addSource(cartDao.cartList) {
+            addSource(cartDao.getCartList(phone)) {
                 value = CartMapper.mapDbModelListToEntityList(it)
             }
         }
@@ -80,5 +80,9 @@ class DBLocalDataSource(
         db.queryExecutor.execute {
             cartDao.checkedTrueAllProductsCart()
         }
+    }
+
+    fun getUserName(phone: String): LiveData<String> {
+        return db.userDao().getUserName(phone)
     }
 }

@@ -52,7 +52,7 @@ class ShopRemoteDataSource(
     }
 
 
-    fun addProductInCart(productListItem: ProductListItem) {
+    fun addProductInCart(productListItem: ProductListItem, phone: String) {
         db.queryExecutor.execute {
             cartDao.insert(
                 Cart(
@@ -61,7 +61,8 @@ class ShopRemoteDataSource(
                     productListItem.productName,
                     productListItem.price,
                     1,
-                    false
+                    false,
+                    phone
                 )
             )
         }

@@ -21,10 +21,11 @@ class CategoryListViewModel(application: Application, category: String) :
     private val getProductCategoryListItem = GetProductsListUseCase(repositoryImpl)
     private val addProductInCartUseCase = AddProductInCartUseCase(repositoryImpl)
 
-    val productsListLd: LiveData<List<ProductListItem>> = getProductCategoryListItem.invoke(category)
+    val productsListLd: LiveData<List<ProductListItem>> =
+        getProductCategoryListItem.invoke(category)
 
-    fun addProductInCart(productListItem: ProductListItem) = viewModelScope.launch {
-        addProductInCartUseCase(productListItem)
+    fun addProductInCart(productListItem: ProductListItem, phone: String) = viewModelScope.launch {
+        addProductInCartUseCase(productListItem, phone)
     }
 
 }

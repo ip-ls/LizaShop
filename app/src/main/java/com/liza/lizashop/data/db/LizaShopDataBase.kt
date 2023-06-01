@@ -135,7 +135,49 @@ abstract class LizaShopDataBase : RoomDatabase() {
                                         "NINUX A22 3.1CH Home\nTheater System Speakers",
                                         "$47",
                                         CATEGORY_TECH
-                                    )
+                                    ),
+                                    ShopProduct(
+                                        13,
+                                        R.drawable.image_product_4,
+                                        "Коврик для мыши",
+                                        "$23",
+                                        CATEGORY_ACCESSORIES
+                                    ),
+                                    ShopProduct(
+                                        14,
+                                        R.drawable.image_product_5,
+                                        "Игровой коврик A4TECH Bloody",
+                                        "$44",
+                                        CATEGORY_ACCESSORIES
+                                    ),
+                                    ShopProduct(
+                                        15,
+                                        R.drawable.image_product_6,
+                                        "Чехол \"Волк\" на Apple iPhone 13 Pro Max",
+                                        "$47",
+                                        CATEGORY_ACCESSORIES
+                                    ),
+                                    ShopProduct(
+                                        16,
+                                        R.drawable.image_product_7,
+                                        "Чехол для наушников Air Pods 1/2, Беззубик",
+                                        "$23",
+                                        CATEGORY_ACCESSORIES
+                                    ),
+                                    ShopProduct(
+                                        17,
+                                        R.drawable.image_product_8,
+                                        "Накладка на клавиатуру MacBook 12 (2016) EU",
+                                        "$49",
+                                        CATEGORY_ACCESSORIES
+                                    ),
+                                    ShopProduct(
+                                        18,
+                                        R.drawable.image_product_9,
+                                        "Держательдля телефона \"Неоновый котенок\"",
+                                        "$24",
+                                        CATEGORY_ACCESSORIES
+                                    ),
                                 )
                                 INSTANCE?.shopProductDao()
                                     ?.insertAll(*productTechList.toTypedArray())

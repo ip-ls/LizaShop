@@ -1,16 +1,20 @@
 package com.liza.lizashop.presentation.fragments
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.liza.lizashop.databinding.FragmentCartBinding
+import com.liza.lizashop.presentation.fragments.LoginFragment.Companion
 import com.liza.lizashop.presentation.stateholders.adapters.CartRvAdapter
 import com.liza.lizashop.presentation.stateholders.viewmodels.CartViewModel
+import com.liza.lizashop.presentation.stateholders.viewmodels.CartViewModelFactory
 
 class CartFragment : Fragment() {
 
@@ -18,8 +22,21 @@ class CartFragment : Fragment() {
     private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
 
+    private val phone by lazy {
+        val sharedPrefRead: SharedPreferences =
+            requireActivity().getPreferences(AppCompatActivity.MODE_PRIVATE)
+        sharedPrefRead.getString(LoginFragment.SHARED_PREF_LOGIN_ED, "")
+    }
+
+    private val viewModelFactory by lazy {
+        CartViewModelFactory(
+            requireActivity().application,
+            phone ?: ""
+        )
+    }
+
     private val viewModel by lazy {
-        ViewModelProvider(this)[CartViewModel::class.java]
+        ViewModelProvider(this, viewModelFactory)[CartViewModel::class.java]
     }
 
     override fun onCreateView(

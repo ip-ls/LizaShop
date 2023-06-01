@@ -8,7 +8,7 @@ class GetCartListUseCase(
     private val repository: LocalRepository
 ) {
 
-    operator fun invoke(): LiveData<List<CartListItem>> {
-        return repository.getCartListUseCase()
+    operator fun invoke(phone: String): LiveData<List<CartListItem>> {
+        return repository.getCartListUseCase(phone)
     }
 }

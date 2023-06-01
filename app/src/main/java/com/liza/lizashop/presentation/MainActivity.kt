@@ -3,6 +3,7 @@ package com.liza.lizashop.presentation
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -20,8 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         // read
         val sharedPrefRead: SharedPreferences = getPreferences(MODE_PRIVATE)
-        val logined = sharedPrefRead.getBoolean(LoginFragment.SHARED_PREF_LOGIN_ED, false)
-
+        val logined = sharedPrefRead.getString(LoginFragment.SHARED_PREF_LOGIN_ED, "")
 
         val navHost =
             supportFragmentManager.findFragmentById(R.id.bottom_fragment_container) as NavHostFragment
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             .navInflater.inflate(R.navigation.main_graph)
 
 
-        if (logined) {
+        if (logined != "") {
             graph.setStartDestination(R.id.bottomNavGraph)
             navHost.navController.graph = graph
         } else {
