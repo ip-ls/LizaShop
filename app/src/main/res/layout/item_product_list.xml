@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_product_1" />
+        tools:src="@drawable/image_product_4" />
 
     <TextView
         android:id="@+id/textProductName"
@@ -31,12 +31,11 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:textColor="@color/black"
-        android:maxLines="2"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageProduct"
-        tools:text="AILYONS 2.1CH Multimedia woofer" />
+        tools:text="Маятник черный\nКамень: черный обсидиан" />
 
     <TextView
         android:id="@+id/textPrice"
@@ -49,7 +48,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button"
-        tools:text="24$" />
+        tools:text="275₽" />
 
     <Button
         android:id="@+id/button"

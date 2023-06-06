@@ -28,7 +28,7 @@
         android:background="@drawable/rounded_head_categories"
         android:gravity="center"
         android:padding="32dp"
-        android:text="@string/tech"
+        android:text="@string/minerals"
         android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
