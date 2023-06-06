@@ -3,6 +3,7 @@ package com.liza.lizashop.presentation.fragments
 import android.app.AlertDialog
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -79,8 +80,10 @@ class CategoryListFragment : Fragment() {
                         layout.addView(productEt)
 
                         val productPriceEt = EditText(requireContext())
+                        productPriceEt.inputType = InputType.TYPE_CLASS_NUMBER
                         productPriceEt.hint = "Цена"
                         layout.addView(productPriceEt)
+
 
                         val spinner = Spinner(requireContext())
                         val spinnerItems = arrayOf("Минералы", "Аксессуары")
@@ -104,7 +107,7 @@ class CategoryListFragment : Fragment() {
                                         1,
                                         R.drawable.image_product_2,
                                         productName,
-                                        productPrice,
+                                        productPrice + '₽',
                                         LizaShopDataBase.CATEGORY_MINERALS
                                     )
                                 )
@@ -112,9 +115,9 @@ class CategoryListFragment : Fragment() {
                                 viewModel.addProduct(
                                     ProductListItem(
                                         1,
-                                        R.drawable.image_product_7,
+                                        R.drawable.image_product_4,
                                         productName,
-                                        productPrice,
+                                        productPrice + '₽',
                                         LizaShopDataBase.CATEGORY_ACCESSORIES
                                     )
                                 )

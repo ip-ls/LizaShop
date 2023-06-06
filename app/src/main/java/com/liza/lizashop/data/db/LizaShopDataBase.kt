@@ -183,7 +183,7 @@ abstract class LizaShopDataBase : RoomDatabase() {
 
                                 INSTANCE?.userDao()
                                     ?.insertAll(User(
-                                        1,
+                                        0,
                                         "0000000000",
                                         "Admin",
                                         "Admin",
