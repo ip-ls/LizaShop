@@ -12,7 +12,6 @@ import com.liza.lizashop.data.db.dao.UserDao
 import com.liza.lizashop.data.db.entities.ShopProduct
 import com.liza.lizashop.data.db.entities.User
 import com.liza.lizashop.data.db.entities.Cart
-import com.liza.lizashop.domain.entity.ProductListItem
 import com.liza.lizashop.domain.entity.Roles
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +30,7 @@ abstract class LizaShopDataBase : RoomDatabase() {
 
     companion object {
 
-        const val CATEGORY_TECH = "tech"
+        const val CATEGORY_MINERALS = "minerals"
         const val CATEGORY_ACCESSORIES = "accessories"
 
         // Singleton prevents multiple instances of database opening at the
@@ -55,127 +54,127 @@ abstract class LizaShopDataBase : RoomDatabase() {
                                     ShopProduct(
                                         1,
                                         R.drawable.image_product_1,
-                                        "AILYONS 2.1CH\nMultimedia woofer",
-                                        "$23",
-                                        CATEGORY_TECH
+                                        "Галтовка розовый кварц",
+                                        "399₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         2,
                                         R.drawable.image_product_2,
-                                        "CLUBOX 3.1CH HIFI\nMultimedia Sub-woofer",
-                                        "$44",
-                                        CATEGORY_TECH
+                                        "Галтовка содалит",
+                                        "569₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         3,
                                         R.drawable.image_product_3,
-                                        "NINUX A22 3.1CH Home\nTheater System Speakers",
-                                        "$47",
-                                        CATEGORY_TECH
+                                        "Обсидиан чёрный галтовка",
+                                        "399₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         4,
-                                        R.drawable.image_product_1,
-                                        "AILYONS 2.1CH\nMultimedia woofer",
-                                        "$23",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_10,
+                                        "Малахит (имитация) галтовка",
+                                        "399₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         5,
-                                        R.drawable.image_product_2,
-                                        "CLUBOX 3.1CH HIFI\nMultimedia Sub-woofer",
-                                        "$44",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_11,
+                                        "Опалит галтовка",
+                                        "459₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         6,
-                                        R.drawable.image_product_3,
-                                        "NINUX A22 3.1CH Home\nTheater System Speakers",
-                                        "$47",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_12,
+                                        "Галтовка говлит",
+                                        "399₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         7,
-                                        R.drawable.image_product_1,
-                                        "AILYONS 2.1CH\nMultimedia woofer",
-                                        "$23",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_13,
+                                        "Яшма \"Киви\" галтовка",
+                                        "399₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         8,
-                                        R.drawable.image_product_2,
-                                        "CLUBOX 3.1CH HIFI\nMultimedia Sub-woofer",
-                                        "$44",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_14,
+                                        "Галтовка агат",
+                                        "499₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         9,
-                                        R.drawable.image_product_3,
-                                        "NINUX A22 3.1CH Home\nTheater System Speakers",
-                                        "$47",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_15,
+                                        "Галтовка лазурит",
+                                        "652₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         10,
-                                        R.drawable.image_product_1,
-                                        "AILYONS 2.1CH\nMultimedia woofer",
-                                        "$23",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_16,
+                                        "Вулканический камень галтовка",
+                                        "702₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         11,
-                                        R.drawable.image_product_2,
-                                        "CLUBOX 3.1CH HIFI\nMultimedia Sub-woofer",
-                                        "$44",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_17,
+                                        "Яшма далматиновая галтовка",
+                                        "540₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         12,
-                                        R.drawable.image_product_3,
-                                        "NINUX A22 3.1CH Home\nTheater System Speakers",
-                                        "$47",
-                                        CATEGORY_TECH
+                                        R.drawable.image_product_18,
+                                        "Галтовка унакит",
+                                        "540₽",
+                                        CATEGORY_MINERALS
                                     ),
                                     ShopProduct(
                                         13,
                                         R.drawable.image_product_4,
-                                        "Коврик для мыши",
-                                        "$23",
+                                        "Маятник из черного обсидиана",
+                                        "275₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                     ShopProduct(
                                         14,
                                         R.drawable.image_product_5,
-                                        "Игровой коврик A4TECH Bloody",
-                                        "$44",
+                                        "Браслет из розового кварца",
+                                        "554₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                     ShopProduct(
                                         15,
                                         R.drawable.image_product_6,
-                                        "Чехол \"Волк\" на Apple iPhone 13 Pro Max",
-                                        "$47",
+                                        "Серьги из минерала Янтарь",
+                                        "1197₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                     ShopProduct(
                                         16,
                                         R.drawable.image_product_7,
-                                        "Чехол для наушников Air Pods 1/2, Беззубик",
-                                        "$23",
+                                        "Колье с имитацией\nосколка минерала",
+                                        "538₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                     ShopProduct(
                                         17,
                                         R.drawable.image_product_8,
-                                        "Накладка на клавиатуру MacBook 12 (2016) EU",
-                                        "$49",
+                                        "Браслет с горным хрусталем",
+                                        "1637₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                     ShopProduct(
                                         18,
                                         R.drawable.image_product_9,
-                                        "Держательдля телефона \"Неоновый котенок\"",
-                                        "$24",
+                                        "Браслет из аквамарина",
+                                        "290₽",
                                         CATEGORY_ACCESSORIES
                                     ),
                                 )

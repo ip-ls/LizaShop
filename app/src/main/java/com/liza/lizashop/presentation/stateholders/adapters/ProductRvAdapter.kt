@@ -40,7 +40,7 @@ class ProductRvAdapter() :
             binding.imageProduct.setImageResource(item.imageRes)
             binding.textProductName.text = item.productName
             binding.textPrice.text = item.price
-            itemView.setOnClickListener {
+            binding.button.setOnClickListener {
                 onProductListClickListener?.invoke(item)
             }
         }

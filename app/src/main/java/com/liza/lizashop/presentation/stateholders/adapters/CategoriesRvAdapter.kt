@@ -7,10 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.liza.lizashop.data.db.LizaShopDataBase
 import com.liza.lizashop.databinding.ItemCategoriesListBinding
 import com.liza.lizashop.domain.entity.ProductCategoryListItem
-import com.liza.lizashop.presentation.fragments.CategoriesFragment
 import com.liza.lizashop.presentation.fragments.CategoriesFragmentDirections
-import com.liza.lizashop.presentation.fragments.CategoryListFragment
-import com.liza.lizashop.presentation.fragments.GreetingFragmentDirections
 
 class CategoriesRvAdapter(private val productCategoryList: List<ProductCategoryListItem>) :
     RecyclerView.Adapter<CategoriesRvAdapter.ViewHolder>() {
@@ -44,7 +41,7 @@ class CategoriesRvAdapter(private val productCategoryList: List<ProductCategoryL
                 } else if (position == 1) {
                     val action =
                         CategoriesFragmentDirections.actionCategoriesFragmentToCategoryListFragment(
-                            LizaShopDataBase.CATEGORY_TECH
+                            LizaShopDataBase.CATEGORY_MINERALS
                         )
                     it.findNavController().navigate(action)
                 }
