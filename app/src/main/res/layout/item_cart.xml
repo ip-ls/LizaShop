@@ -16,7 +16,7 @@
     <ImageView
         android:id="@+id/imageProduct"
         android:layout_width="129dp"
-        android:layout_height="105dp"
+        android:layout_height="164dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@null"
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkbox"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_product_1" />
+        tools:src="@drawable/image_product_4" />
 
     <TextView
         android:id="@+id/textProductName"
@@ -52,7 +52,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageProduct"
         app:layout_constraintTop_toBottomOf="@+id/textProductName"
         app:layout_constraintVertical_bias="1"
-        tools:text="$45" />
+        tools:text="275₽" />
 
     <TextView
         android:id="@+id/textPlus"

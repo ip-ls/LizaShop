@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.liza.lizashop.data.db.LizaShopDataBase
 import com.liza.lizashop.databinding.ItemSaleListBinding
 import com.liza.lizashop.domain.entity.SaleTitleListItem
-import com.liza.lizashop.presentation.fragments.CategoriesFragmentDirections
 import com.liza.lizashop.presentation.fragments.MainFragmentDirections
 
 class SaleRvAdapter(private val saleList: List<SaleTitleListItem>) :
@@ -37,7 +36,7 @@ class SaleRvAdapter(private val saleList: List<SaleTitleListItem>) :
                     if (position == 0) {
                         val action =
                             MainFragmentDirections.actionMainFragmentToCategoryListFragment(
-                                LizaShopDataBase.CATEGORY_TECH
+                                LizaShopDataBase.CATEGORY_MINERALS
                             )
                         it.findNavController().navigate(action)
                     }

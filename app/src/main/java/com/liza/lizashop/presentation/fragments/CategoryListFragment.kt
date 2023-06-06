@@ -17,17 +17,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.liza.lizashop.R
 import com.liza.lizashop.data.db.LizaShopDataBase
-import com.liza.lizashop.data.db.entities.ShopProduct
 import com.liza.lizashop.databinding.FragmentCategoryListBinding
-import com.liza.lizashop.databinding.FragmentGreetingBinding
 import com.liza.lizashop.domain.entity.ProductListItem
 import com.liza.lizashop.domain.entity.Roles
 import com.liza.lizashop.presentation.fragments.LoginFragment.Companion
-import com.liza.lizashop.presentation.stateholders.adapters.CategoriesRvAdapter
 import com.liza.lizashop.presentation.stateholders.adapters.ProductRvAdapter
 import com.liza.lizashop.presentation.stateholders.viewmodels.CategoriesListViewModelFactory
 import com.liza.lizashop.presentation.stateholders.viewmodels.CategoryListViewModel
-import com.liza.lizashop.presentation.stateholders.viewmodels.LoginViewModel
 
 class CategoryListFragment : Fragment() {
 
@@ -87,7 +83,7 @@ class CategoryListFragment : Fragment() {
                         layout.addView(productPriceEt)
 
                         val spinner = Spinner(requireContext())
-                        val spinnerItems = arrayOf("Техника", "Аксессуары")
+                        val spinnerItems = arrayOf("Минералы", "Аксессуары")
                         val adapterSpinner = ArrayAdapter(
                             requireContext(),
                             android.R.layout.simple_spinner_dropdown_item, spinnerItems
@@ -109,7 +105,7 @@ class CategoryListFragment : Fragment() {
                                         R.drawable.image_product_2,
                                         productName,
                                         productPrice,
-                                        LizaShopDataBase.CATEGORY_TECH
+                                        LizaShopDataBase.CATEGORY_MINERALS
                                     )
                                 )
                             } else if (spinnerOptionPosition == 1) {
@@ -135,8 +131,8 @@ class CategoryListFragment : Fragment() {
             }
         }
 
-        if (args.CATEGORYNAME == LizaShopDataBase.CATEGORY_TECH)
-            binding.textTitle.text = "Техника"
+        if (args.CATEGORYNAME == LizaShopDataBase.CATEGORY_MINERALS)
+            binding.textTitle.text = "Минералы"
         if (args.CATEGORYNAME == LizaShopDataBase.CATEGORY_ACCESSORIES)
             binding.textTitle.text = "Аксессуары"
 

@@ -25,12 +25,12 @@ class ShopRemoteDataSource(
     private val shopProductDao = db.shopProductDao()
 
     private val categoryList = listOf<ProductCategoryListItem>(
-        ProductCategoryListItem(R.drawable.icon_category_glass, "Аксессуары"),
-        ProductCategoryListItem(R.drawable.icon_category_phone, "Техника"),
+        ProductCategoryListItem(R.drawable.icon_category_accessories, "Аксессуары"),
+        ProductCategoryListItem(R.drawable.icon_category_mineral1, "Минералы"),
     )
 
     private val categoryTitlesList = listOf<SaleTitleListItem>(
-        SaleTitleListItem(R.drawable.sale_category_tech, "Техника"),
+        SaleTitleListItem(R.drawable.sale_category_minerals, "Минералы"),
     )
 
     fun getProductList(category: String): LiveData<List<ProductListItem>> {
