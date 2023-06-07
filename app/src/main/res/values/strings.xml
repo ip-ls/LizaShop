@@ -26,6 +26,7 @@
     <string name="name">Имя</string>
     <string name="main">Главная</string>
     <string name="cart">Корзина</string>
+    <string name="point">Пункт выдачи</string>
     <string name="categories">Категории</string>
     <string name="start_search">Начните поиск</string>
     <string name="delivery">Доставка</string>

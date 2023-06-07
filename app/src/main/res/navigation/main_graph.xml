@@ -56,6 +56,11 @@
         android:id="@+id/bottomNavGraph"
         app:startDestination="@id/mainFragment">
         <fragment
+            android:id="@+id/pointOfIssueFragment"
+            android:name="com.liza.lizashop.presentation.fragments.PointOfIssueFragment"
+            android:label="PointOfIssueFragment"
+            tools:layout="@layout/fragment_point_of_issue"/>
+        <fragment
             android:id="@+id/cartFragment"
             android:name="com.liza.lizashop.presentation.fragments.CartFragment"
             android:label="CartFragment"
@@ -108,6 +113,14 @@
                 app:exitAnim="@android:anim/fade_out"
                 app:popEnterAnim="@android:anim/fade_in"
                 app:popExitAnim="@android:anim/fade_out" />
+            <action
+                android:id="@+id/action_accountFragment_to_pointOfIssueFragment"
+                app:destination="@id/pointOfIssueFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out"
+                app:popEnterAnim="@android:anim/fade_in"
+                app:popExitAnim="@android:anim/fade_out"/>
+
         </fragment>
     </navigation>
 </navigation>
